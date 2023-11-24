@@ -14,8 +14,8 @@ const ExperienceTimeline = ({ experiences }: ExperienceProps) => {
   return (
     <div className="container">
       <div className="flex flex-col justify-center p-2 text-slate-600 dark:text-slate-100">
-        {experiences.map((experience) => (
-          <div className="flex">
+        {experiences.map((experience, key) => (
+          <div key={key} className="flex">
             <div className="relative mr-6 md:mr-10">
               <div className="flex h-full w-3 items-center justify-center">
                 <div className="pointer-events-none h-full w-[2px] bg-blue-500"></div>
