@@ -24,7 +24,7 @@ const ProjectCard = ({
   const { name, techStack, img, sourceCodeLink, hostedURL, description } =
     project;
   return (
-    <div className="mb-6 flex flex-col items-center gap-2 rounded-xl bg-slate-500 bg-opacity-10 p-6 text-slate-600 ring-1 ring-inset ring-blue-700/10 dark:text-slate-300 lg:flex-row lg:gap-8">
+    <div className="mb-6 flex flex-col items-center gap-2 rounded-xl bg-slate-500 bg-opacity-10 p-6 text-slate-600 ring-1 ring-inset ring-blue-700/10 dark:text-slate-200 lg:flex-row lg:gap-8">
       <Image
         src={img}
         className="cursor-pointer lg:w-1/3"
@@ -69,7 +69,9 @@ const ProjectCard = ({
         <div className="mr-auto flex gap-2 p-4 text-sm text-slate-500">
           <ul className="list-disc">
             {description.map((desc, key) => (
-              <li key={key}>{desc}</li>
+              <li key={key} className="py-1">
+                {desc}
+              </li>
             ))}
           </ul>
         </div>

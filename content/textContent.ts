@@ -146,7 +146,8 @@ export const textContent: TextContent = {
         sourceCodeLink: "https://github.com/shrvnkmr/Job-Portal",
         hostedURL: "https://admirable-gaufre-63505e.netlify.app/",
         description: [
-          "This is a simple job portal developed to get started with Tailwind.css built using React.js for the frontend, Tailwind CSS library for styling, and mockapi.io for the API server.",
+          "This is a simple job portal project developed to get started with Tailwind.css.",
+          "It uses React.js for the frontend, Tailwind CSS library for styling, and mockapi.io for the API server.",
           "The website allows users to create job postings and view them.",
           "It is hosted on Netlify.",
         ],

@@ -13,7 +13,7 @@ interface ExperienceProps {
 const ExperienceTimeline = ({ experiences }: ExperienceProps) => {
   return (
     <div className="container">
-      <div className="flex flex-col justify-center p-2 text-slate-600 dark:text-slate-100">
+      <div className="flex flex-col justify-center text-slate-600 dark:text-slate-200 lg:p-2">
         {experiences.map((experience, key) => (
           <div key={key} className="flex">
             <div className="relative mr-6 md:mr-10">
@@ -26,14 +26,14 @@ const ExperienceTimeline = ({ experiences }: ExperienceProps) => {
             <div className="my-8 mr-auto w-full max-w-4xl rounded-xl border border-blue-500 p-6 shadow-md">
               <div className="flex justify-between">
                 <h3 className="text-md mb-1 font-medium">{experience?.role}</h3>
-                <h5 className="text-sm text-slate-500">
-                  {experience?.company}
-                </h5>
+                <h5 className="text-sm">{experience?.company}</h5>
               </div>
               <h5 className="text-sm text-slate-500">{experience?.duration}</h5>
-              <ul className="list-disc pl-4 pt-4 text-sm">
+              <ul className="list-disc pl-4 pt-4 text-sm text-slate-500">
                 {experience?.responsibilities?.map((responsibility, key) => (
-                  <li key={key}>{responsibility}</li>
+                  <li key={key} className="py-1">
+                    {responsibility}
+                  </li>
                 ))}
               </ul>
             </div>
