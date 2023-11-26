@@ -26,8 +26,8 @@ const Footer = () => {
           <SocialMediaLink url={gmailURL} icon={BsFillEnvelopeFill} />
           <SocialMediaLink url={instaURL} icon={BsInstagram} />
         </div>
-        <h4 className="md:order-1">{builtUsingText}</h4>
-        <h4 className="md:order-3">{copyrightText}</h4>
+        <h4 className="md:order-1 text-sm lg:text-base">{builtUsingText}</h4>
+        <h4 className="md:order-3 text-sm lg:text-base">{copyrightText}</h4>
       </div>
     </footer>
   );

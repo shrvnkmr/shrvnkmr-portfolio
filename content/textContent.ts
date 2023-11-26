@@ -1,8 +1,19 @@
+import { StaticImageData } from "next/image";
+import jobPortal from "../public/jobPortal.png";
+
 interface Experience {
   company: string;
   duration: string;
   role: string;
   responsibilities: string[];
+}
+interface Project {
+  name: string;
+  techStack: string;
+  img: StaticImageData;
+  sourceCodeLink: string;
+  hostedURL: string;
+  description: string[];
 }
 interface TextContent {
   about: {
@@ -25,9 +36,7 @@ interface TextContent {
     sectionTitle: string;
     sourceCodeText: string;
     techUsedText: string;
-    name: string;
-    techStack: string;
-    sourceCodeLink: string;
+    project: Project[];
   };
   contact: {
     sectionTitle: string;
@@ -42,13 +51,13 @@ interface TextContent {
     toastFail: string;
   };
   email: {
-    nameTitle: string
+    nameTitle: string;
     emailTitle: string;
     subjectTitle: string;
     messageTitle: string;
     headerText: string;
     footerText: string;
-  }
+  };
   navbar: {
     aboutLabel: string;
     skillsLabel: string;
@@ -129,9 +138,20 @@ export const textContent: TextContent = {
     sectionTitle: "Projects",
     sourceCodeText: "View Source Code",
     techUsedText: "Technology Used :",
-    name: "Job Portal",
-    techStack: "React.js, Tailwind.css, mockapi.io",
-    sourceCodeLink: "https://github.com/shrvnkmr/Job-Portal",
+    project: [
+      {
+        name: "Job Portal",
+        techStack: "React.js, Tailwind.css, mockapi.io",
+        img: jobPortal,
+        sourceCodeLink: "https://github.com/shrvnkmr/Job-Portal",
+        hostedURL: "https://admirable-gaufre-63505e.netlify.app/",
+        description: [
+          "This is a simple job portal developed to get started with Tailwind.css built using React.js for the frontend, Tailwind CSS library for styling, and mockapi.io for the API server.",
+          "The website allows users to create job postings and view them.",
+          "It is hosted on Netlify.",
+        ],
+      },
+    ],
   },
   contact: {
     sectionTitle: "Get in touch",
@@ -151,7 +171,7 @@ export const textContent: TextContent = {
     subjectTitle: "Subject:",
     messageTitle: "Message:",
     headerText: "New Portfolio Enquiry",
-    footerText: "You can respond to this inquiry by replying to this email."
+    footerText: "You can respond to this inquiry by replying to this email.",
   },
   navbar: {
     aboutLabel: "About",

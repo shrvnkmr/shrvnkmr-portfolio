@@ -1,29 +1,36 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
-import jobPortal from "../public/jobPortal.png";
+
+interface Project {
+  name: string;
+  techStack: string;
+  img: StaticImageData;
+  sourceCodeLink: string;
+  hostedURL: string;
+  description: string[];
+}
 
 interface ProjectProps {
   sourceCodeText: string;
   techUsedText: string;
-  name: string;
-  techStack: string;
-  sourceCodeLink: string;
+  project: Project;
 }
 
 const ProjectCard = ({
   sourceCodeText,
   techUsedText,
-  name,
-  techStack,
-  sourceCodeLink,
+  project,
 }: ProjectProps) => {
+  const { name, techStack, img, sourceCodeLink, hostedURL, description } =
+    project;
   return (
-    <div className="flex flex-col items-center gap-2 rounded-xl bg-slate-500 bg-opacity-10 p-6 text-slate-600 ring-1 ring-inset ring-blue-700/10 dark:text-slate-300 lg:flex-row lg:gap-8">
+    <div className="mb-6 flex flex-col items-center gap-2 rounded-xl bg-slate-500 bg-opacity-10 p-6 text-slate-600 ring-1 ring-inset ring-blue-700/10 dark:text-slate-300 lg:flex-row lg:gap-8">
       <Image
-        src={jobPortal}
-        className="lg:w-1/3"
+        src={img}
+        className="cursor-pointer lg:w-1/3"
         width={600}
         alt="Job Portal"
+        onClick={() => window.open(hostedURL)}
       />
       <div className="mb-auto flex flex-col gap-2 p-2">
         <div className="flex items-center">
@@ -58,6 +65,13 @@ const ProjectCard = ({
         <div className="mr-auto flex gap-2 py-2 text-sm">
           <h5 className="whitespace-nowrap">{techUsedText}</h5>
           <p>{techStack}</p>
+        </div>
+        <div className="mr-auto flex gap-2 p-4 text-sm text-slate-500">
+          <ul className="list-disc">
+            {description.map((desc, key) => (
+              <li key={key}>{desc}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
