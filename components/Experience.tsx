@@ -18,7 +18,7 @@ const ExperienceTimeline = ({ experiences }: ExperienceProps) => {
           <div key={key} className="flex">
             <div className="relative mr-6 md:mr-10">
               <div className="flex h-full w-3 items-center justify-center">
-                <div className="pointer-events-none h-full w-[2px] bg-blue-500"></div>
+                <div className="pointer-events-none h-full w-px bg-blue-500"></div>
               </div>
               <div className="absolute top-16 h-3 w-3 rounded-full bg-blue-500"></div>
               <div className="absolute left-3 top-[4.3rem] h-px w-6 bg-blue-500 md:w-10"></div>

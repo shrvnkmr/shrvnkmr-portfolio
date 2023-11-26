@@ -33,10 +33,22 @@ interface TextContent {
     sectionTitle: string;
     name: string;
     email: string;
+    subject: string;
+    subjectPlaceholder: string;
     message: string;
     messagePlaceholder: string;
     submitText: string;
+    toastSuccess: string;
+    toastFail: string;
   };
+  email: {
+    nameTitle: string
+    emailTitle: string;
+    subjectTitle: string;
+    messageTitle: string;
+    headerText: string;
+    footerText: string;
+  }
   navbar: {
     aboutLabel: string;
     skillsLabel: string;
@@ -125,9 +137,21 @@ export const textContent: TextContent = {
     sectionTitle: "Get in touch",
     name: "Name",
     email: "Email",
+    subject: "Subject",
     message: "Message",
+    subjectPlaceholder: "Enter subject here",
     messagePlaceholder: "Enter your message here",
     submitText: "Submit",
+    toastSuccess: "Email sent successfully!",
+    toastFail: "Something went wrong :(",
+  },
+  email: {
+    nameTitle: "Name:",
+    emailTitle: "Email:",
+    subjectTitle: "Subject:",
+    messageTitle: "Message:",
+    headerText: "New Portfolio Enquiry",
+    footerText: "You can respond to this inquiry by replying to this email."
   },
   navbar: {
     aboutLabel: "About",

@@ -1,30 +1,29 @@
 "use client";
+import { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 import AboutSection from "@/components/AboutSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import useDarkMode from "@/hooks/useDarkMode";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, setDarkMode } = useDarkMode();
+  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const savedMode = localStorage.getItem("mode");
-  //   if (savedMode === "dark") {
-  //     setDarkMode(true);
-  //   }
-  // }, []);
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("mode", darkMode ? "dark" : "light");
-  // }, [darkMode]);
-
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className={`scroll-smooth ${darkMode ? "dark" : ""}`}>
       <Head>
         <title>Shravan Kumar</title>
@@ -43,6 +42,7 @@ export default function Home() {
         <ScrollIndicator />
         <br />
         <Footer />
+        <Toaster position="bottom-right" />
       </main>
     </div>
   );

@@ -11,7 +11,7 @@ const AboutSection = () => {
         <h1 className="text-5xl font-medium leading-[3.5rem] text-blue-600">
           {name}
         </h1>
-        <h2 className="py-10 text-[4rem] max-[375px]:text-[3.5rem] font-medium leading-[5rem]">
+        <h2 className="py-10 text-[4rem] font-medium leading-[5rem] max-[375px]:text-[3.5rem]">
           {title}
         </h2>
         <a
@@ -19,10 +19,7 @@ const AboutSection = () => {
           target="_blank"
           className="p-4 pl-0"
         >
-          <button
-            onClick={() => console.log("")}
-            className="group relative flex h-10 w-32 cursor-pointer items-center justify-center overflow-hidden rounded-md border border-blue-600 shadow-md"
-          >
+          <button className="group relative flex h-10 w-32 cursor-pointer items-center justify-center overflow-hidden rounded-md border border-blue-600 shadow-md">
             <span className="transform text-sm font-semibold text-blue-600 transition-all duration-300 group-hover:translate-x-20">
               {downloadText}
             </span>

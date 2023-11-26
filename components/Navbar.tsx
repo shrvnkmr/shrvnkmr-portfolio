@@ -55,7 +55,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
     const sections = document.querySelectorAll("section");
     // intersection observer api to indicate when the section is in view
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.8, // percentage at which callback is triggered
+      threshold: 0.7, // percentage at which callback is triggered
     });
 
     sections.forEach((section) => {

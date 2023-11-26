@@ -1,14 +1,28 @@
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { textContent } from "@/content/textContent";
-import React, { ChangeEvent, FormEvent, useState } from "react";
 
 const Contact = () => {
-  const [formState, setFormState] = useState({
+  const initState = {
     name: "",
     email: "",
+    subject: "",
     message: "",
-  });
-  const { sectionTitle, name, email, message, messagePlaceholder, submitText } =
-    textContent.contact;
+  };
+  const [formState, setFormState] = useState(initState);
+  const [isBtnDisabled, setIsBtnDisabled] = useState<boolean>(false);
+  const {
+    sectionTitle,
+    name,
+    email,
+    subject,
+    subjectPlaceholder,
+    message,
+    messagePlaceholder,
+    submitText,
+    toastSuccess,
+    toastFail,
+  } = textContent.contact;
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -22,6 +36,7 @@ const Contact = () => {
 
   const submitForm = async (e: FormEvent) => {
     e.preventDefault();
+    setIsBtnDisabled(true);
     try {
       const res = await fetch("/api/submit", {
         method: "POST",
@@ -30,11 +45,22 @@ const Contact = () => {
         },
         body: JSON.stringify(formState),
       });
-      console.log("res: ", res);
+      if (res.status === 200) {
+        setFormState(initState);
+        toast.success(toastSuccess);
+      } else {
+        setIsBtnDisabled(false);
+        toast.error(toastFail);
+      }
     } catch (error) {
-      console.log("error: ", error);
+      setIsBtnDisabled(false);
+      toast.error(toastFail);
     }
   };
+
+  useEffect(() => {
+    setIsBtnDisabled(Object.values(formState).some((v) => v === ""));
+  }, [formState]);
 
   return (
     <section
@@ -54,6 +80,8 @@ const Contact = () => {
             type="text"
             id="name"
             name="name"
+            value={formState?.name}
+            autoComplete="off"
             placeholder="John Doe"
             onChange={handleChange}
             className="rounded-md border border-sky-500 bg-slate-50 p-3 text-xs focus:shadow-sm focus:shadow-sky-500 focus:outline-none dark:border-sky-800 dark:bg-slate-800 md:text-sm"
@@ -65,7 +93,22 @@ const Contact = () => {
             type="email"
             id="email"
             name="email"
+            value={formState?.email}
+            autoComplete="off"
             placeholder="abc@xyz.com"
+            onChange={handleChange}
+            className="rounded-md border border-sky-500 bg-slate-50 p-3 text-xs focus:shadow-sm focus:shadow-sky-500 focus:outline-none dark:border-sky-800 dark:bg-slate-800 md:text-sm"
+          />
+        </div>
+        <div className="flex flex-col gap-2 pb-4">
+          <label htmlFor="subject">{subject}</label>
+          <input
+            type="subject"
+            id="subject"
+            name="subject"
+            value={formState?.subject}
+            autoComplete="off"
+            placeholder={subjectPlaceholder}
             onChange={handleChange}
             className="rounded-md border border-sky-500 bg-slate-50 p-3 text-xs focus:shadow-sm focus:shadow-sky-500 focus:outline-none dark:border-sky-800 dark:bg-slate-800 md:text-sm"
           />
@@ -75,6 +118,8 @@ const Contact = () => {
           <textarea
             id="message"
             name="message"
+            value={formState?.message}
+            autoComplete="off"
             placeholder={messagePlaceholder}
             rows={8}
             onChange={handleChange}
@@ -84,7 +129,8 @@ const Contact = () => {
         <div className="flex items-center justify-center pt-2">
           <button
             type="submit"
-            className="group flex h-10 w-32 items-center justify-center gap-2 rounded-md border border-blue-600 font-medium text-blue-600 shadow-md hover:bg-blue-600 hover:text-slate-100"
+            disabled={isBtnDisabled}
+            className="group flex h-10 w-32 items-center justify-center gap-2 rounded-md border border-blue-600 font-medium text-blue-600 shadow-md hover:bg-blue-600 hover:text-slate-100 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <span className="rotate-45 transition-all duration-300 group-hover:translate-x-[0.075rem]">
               <svg
