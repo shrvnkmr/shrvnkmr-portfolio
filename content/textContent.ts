@@ -141,7 +141,7 @@ export const textContent: TextContent = {
     techUsedText: "Technology Used :",
     project: [
       {
-        name: "Chirpup - A socialmedia app",
+        name: "Chirpup",
         techStack: "React.js, MongoDB, Express.js, Node.js, MUI, Formik, yup.",
         img: chirpUP,
         sourceCodeLink: "https://github.com/shrvnkmr/MERN-SocialMediaApp",
