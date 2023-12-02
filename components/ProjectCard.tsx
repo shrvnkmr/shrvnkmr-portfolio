@@ -32,7 +32,7 @@ const ProjectCard = ({
         alt="Job Portal"
         onClick={() => window.open(hostedURL)}
       />
-      <div className="mb-auto w-full flex flex-col gap-2 p-2">
+      <div className="mb-auto flex w-full flex-col gap-2 p-2">
         <div className="flex items-center">
           <h4 className="font-medium">{name}</h4>
           <a
@@ -63,8 +63,10 @@ const ProjectCard = ({
           </a>
         </div>
         <div className="mr-auto flex gap-2 py-2 text-sm">
-          <h5 className="whitespace-nowrap">{techUsedText}</h5>
-          <p>{techStack}</p>
+          <h5>
+            <p className="underline">{techUsedText}</p>
+            {techStack}
+          </h5>
         </div>
         <div className="mr-auto flex gap-2 p-4 text-sm text-slate-500">
           <ul className="list-disc">
