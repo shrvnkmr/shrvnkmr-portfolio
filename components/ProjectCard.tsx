@@ -32,7 +32,7 @@ const ProjectCard = ({
         alt="Job Portal"
         onClick={() => window.open(hostedURL)}
       />
-      <div className="mb-auto flex w-full flex-col gap-2 p-2">
+      <div className="mb-auto flex w-full flex-col gap-2 py-2 md:p-2">
         <div className="flex items-center">
           <h4 className="font-medium">{name}</h4>
           <a
@@ -43,7 +43,7 @@ const ProjectCard = ({
             href={sourceCodeLink}
           >
             <span className="whitespace-nowrap">
-              <span className="border-b border-transparent pb-px transition group-hover:border-blue-500 motion-reduce:transition-none">
+              <span className="border-b border-transparent pb-px text-[0.65rem] transition group-hover:border-blue-500 motion-reduce:transition-none md:text-xs">
                 {sourceCodeText}
               </span>
               <svg
@@ -64,7 +64,7 @@ const ProjectCard = ({
         </div>
         <div className="mr-auto flex gap-2 py-2 text-sm">
           <h5>
-            <p className="underline">{techUsedText}</p>
+            <p className="decoration underline decoration-blue-500 decoration-1 underline-offset-[3px]">{techUsedText}</p>
             {techStack}
           </h5>
         </div>
