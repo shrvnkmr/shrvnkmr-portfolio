@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 import jobPortal from "../public/jobPortal.png";
+import chirpUP from "../public/chirpUp.png";
 
 interface Experience {
   company: string;
@@ -139,6 +140,18 @@ export const textContent: TextContent = {
     sourceCodeText: "View Source Code",
     techUsedText: "Technology Used :",
     project: [
+      {
+        name: "Chirpup - A socialmedia app",
+        techStack: "React.js, MongoDB, Express.js, Node.js, MUI, Formik, yup.",
+        img: chirpUP,
+        sourceCodeLink: "https://github.com/shrvnkmr/MERN-SocialMediaApp",
+        hostedURL: "https://chirpup.vercel.app/",
+        description: [
+          "Social media site built using MERN stack which allows user to create and interact with posts, upload photos, add friend and view user timeline.",
+          "Seamless login process and API authorization enabled using JWT.",
+          "It is hosted on vercel with a streamlined build pipeline.",
+        ],
+      },
       {
         name: "Job Portal",
         techStack: "React.js, Tailwind.css, mockapi.io",

@@ -32,7 +32,7 @@ const ProjectCard = ({
         alt="Job Portal"
         onClick={() => window.open(hostedURL)}
       />
-      <div className="mb-auto flex flex-col gap-2 p-2">
+      <div className="mb-auto w-full flex flex-col gap-2 p-2">
         <div className="flex items-center">
           <h4 className="font-medium">{name}</h4>
           <a
