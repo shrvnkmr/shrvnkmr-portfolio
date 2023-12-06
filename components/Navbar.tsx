@@ -41,6 +41,11 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
 
   const ModeIcon = darkMode ? modeIcons["dark"] : modeIcons["light"];
 
+  const navigate = (id : sectionID) => {
+    scrollToSection(id);
+    setShowNav(false)
+  }
+
   useEffect(() => {
     const handleIntersection: IntersectionObserverCallback = (
       entries: IntersectionObserverEntry[],
@@ -129,7 +134,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                 className={`cursor-pointer text-lg font-semibold hover:text-blue-500 ${
                   activeSection === section.id ? "active" : ""
                 }`}
-                onClick={() => scrollToSection(section.id)}
+                onClick={() => navigate(section.id)}
               >
                 {section.label}
               </li>
