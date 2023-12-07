@@ -138,7 +138,7 @@ export const textContent: TextContent = {
   projects: {
     sectionTitle: "Projects",
     sourceCodeText: "View Source Code",
-    techUsedText: "Techstack: ",
+    techUsedText: "Techstack : ",
     project: [
       {
         name: "Chirpup",

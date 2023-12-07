@@ -64,11 +64,11 @@ const ProjectCard = ({
         </div>
         <div className="mr-auto flex gap-2 py-2 text-sm">
           <h5>
-            <p className="decoration underline decoration-blue-500 decoration-1 underline-offset-[3px]">{techUsedText}</p>
+            <p className="decoration underline pb-2 decoration-blue-500 decoration-1 underline-offset-[3px]">{techUsedText}</p>
             {techStack}
           </h5>
         </div>
-        <div className="mr-auto flex gap-2 p-4 text-sm text-slate-500">
+        <div className="mr-auto flex gap-2 px-4 text-sm text-slate-500">
           <ul className="list-disc">
             {description.map((desc, key) => (
               <li key={key} className="py-1">
