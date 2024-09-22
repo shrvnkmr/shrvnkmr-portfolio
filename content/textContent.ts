@@ -1,6 +1,8 @@
 import { StaticImageData } from "next/image";
 import jobPortal from "../public/jobPortal.png";
 import chirpUP from "../public/chirpUp.png";
+import realtorPortfolio from "../public/realtorPortfolio.png";
+import recruitDashboard from "../public/recruitDashboard.png";
 
 interface Experience {
   company: string;
@@ -116,6 +118,7 @@ export const textContent: TextContent = {
         duration: "Jun 2024 - Present",
         role: "Front End Development Senior Analyst",
         responsibilities: [
+          "Developed a robust authentication and authorization system for our website using SAP Gigya, significantly enhancing security and user experience.",
           "Implemented a monorepo setup with Lerna, reducing dev and build time by 200% and simplifying future maintenance.",
           "Achieved a 100% accessibility score with AAA grade by working on improving the website's accessibility.",
         ],
@@ -151,6 +154,19 @@ export const textContent: TextContent = {
     techUsedText: "Techstack : ",
     project: [
       {
+        name: "Recruit app user dashboard",
+        techStack:
+          "React.js, TypeScript, Material UI, mockapi.io, MUI, Redux, Redux Toolkit, Jest.",
+        img: recruitDashboard,
+        sourceCodeLink:
+          "https://github.com/shrvnkmr/recruit-app-user-dashboard",
+        hostedURL: "https://recruit-app-user-dashboard.vercel.app/",
+        description: [
+          "User dashboard for a recruitment app",
+          "It is hosted on vercel with a streamlined build pipeline.",
+        ],
+      },
+      {
         name: "Chirpup",
         techStack: "React.js, MongoDB, Express.js, Node.js, MUI, Formik, yup.",
         img: chirpUP,
@@ -159,6 +175,17 @@ export const textContent: TextContent = {
         description: [
           "Social media site built using MERN stack which allows user to create and interact with posts, upload photos, add friend and view user timeline.",
           "Seamless login process and API authorization enabled using JWT.",
+          "It is hosted on vercel with a streamlined build pipeline.",
+        ],
+      },
+      {
+        name: "ABM Enterprises Portfolio",
+        techStack: "Next.js, Tailwind.css.",
+        img: realtorPortfolio,
+        sourceCodeLink: "https://github.com/shrvnkmr/abm-enterprises-portfolio",
+        hostedURL: "https://abm-enterprises.vercel.app/",
+        description: [
+          "Portfolio site built for ABM enterprises (realtor)",
           "It is hosted on vercel with a streamlined build pipeline.",
         ],
       },
