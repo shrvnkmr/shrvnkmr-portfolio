@@ -84,7 +84,7 @@ export const textContent: TextContent = {
     downloadText: "Download CV",
     sectionTitle: "About me",
     description:
-      "I'm a 🚀 Web Developer adept in React development, having around 3 years of experience in building and maintaining intricate web applications from scratch with a proven ability to work effectively in fast-paced environments and deliver projects on time.",
+      "As a seasoned 🚀 React JS Developer with nearly 4 years of experience, I specialize in tackling complex challenges, including security, performance optimization, and workflow improvements. My expertise lies in building and maintaining intricate web applications, consistently delivering high-quality projects on time in dynamic, fast-paced environments.",
   },
   skills: {
     sectionTitle: "Skills",
@@ -105,6 +105,7 @@ export const textContent: TextContent = {
       "Express.js",
       "Next.js",
       "Microsoft Azure",
+      "PostgreSQL",
     ],
   },
   experience: {
@@ -112,7 +113,16 @@ export const textContent: TextContent = {
     experiences: [
       {
         company: "Accenture",
-        duration: "Dec 2022 - Present",
+        duration: "Jun 2024 - Present",
+        role: "Front End Development Senior Analyst",
+        responsibilities: [
+          "Implemented a monorepo setup with Lerna, reducing dev and build time by 200% and simplifying future maintenance.",
+          "Achieved a 100% accessibility score with AAA grade by working on improving the website's accessibility.",
+        ],
+      },
+      {
+        company: "Accenture",
+        duration: "Dec 2022 - Jun 2024",
         role: "Front End Development Analyst",
         responsibilities: [
           "Transitioned to a full-stack role, addressing backend resource shortages, while concurrently achieving Azure 900 certification.",
@@ -196,7 +206,7 @@ export const textContent: TextContent = {
   },
   footer: {
     builtUsingText: "Built with 🩵 using Next.js & Tailwind CSS",
-    copyrightText: "© 2023 Shravan. All Rights Reserved.",
+    copyrightText: "© 2024 Shravan. All Rights Reserved.",
     linkedInURL: "https://www.linkedin.com/in/shrvn-kmr",
     githubURL: "https://github.com/shrvnkmr",
     gmailURL: "mailto:shravan.sk656@gmail.com",
