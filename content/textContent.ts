@@ -154,9 +154,9 @@ export const textContent: TextContent = {
     techUsedText: "Techstack : ",
     project: [
       {
-        name: "Recruit app user dashboard",
+        name: "Recruit App User Dashboard",
         techStack:
-          "React.js, TypeScript, Material UI, mockapi.io, MUI, Redux, Redux Toolkit, Jest.",
+          "React.js, TypeScript, Material UI, mockapi.io, Redux, Redux Toolkit, Jest.",
         img: recruitDashboard,
         sourceCodeLink:
           "https://github.com/shrvnkmr/recruit-app-user-dashboard",
@@ -185,7 +185,7 @@ export const textContent: TextContent = {
         sourceCodeLink: "https://github.com/shrvnkmr/abm-enterprises-portfolio",
         hostedURL: "https://abm-enterprises.vercel.app/",
         description: [
-          "Portfolio site built for ABM enterprises (realtor)",
+          "Portfolio site developed for ABM Enterprises (a real estate agency) showcasing property listings.",
           "It is hosted on vercel with a streamlined build pipeline.",
         ],
       },
